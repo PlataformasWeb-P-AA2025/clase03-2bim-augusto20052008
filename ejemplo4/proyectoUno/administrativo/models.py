@@ -8,6 +8,7 @@ class Pais(models.Model):
     # número de habitantes
     pass
 
+# Crear 2 views UNO QUE ME LISTE Y OTRO QUE ME AGREGUE PAISES ESTE ES UN FORMULARIO
 
 class Estudiante(models.Model):
     nombre = models.CharField(max_length=30)
@@ -26,3 +27,13 @@ class NumeroTelefonico(models.Model):
 
     def __str__(self):
         return "%s %s" % (self.telefono, self.tipo)
+
+
+class Pais(models.Model):
+    nombre = models.CharField(max_length=50)
+    capital = models.CharField(max_length=50)
+    numero_provincias = models.IntegerField()
+    numero_habitantes = models.IntegerField()
+
+    def __str__(self):
+        return "%s - %s" % (self.nombre, self.capital)

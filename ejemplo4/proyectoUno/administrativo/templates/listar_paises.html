@@ -1,0 +1,12 @@
+<h2>Listado de Países</h2>
+<h3>Número de países {{ total }}</h3>
+
+{% for p in paises %}
+  {{ p.nombre }}<br/>
+  <ul>
+    <li>Capital: {{ p.capital }}</li>
+    <li>Número de provincias: {{ p.numero_provincias }}</li>
+    <li>Número de habitantes: {{ p.numero_habitantes }}</li>
+  </ul>
+  <br/>
+{% endfor %}
