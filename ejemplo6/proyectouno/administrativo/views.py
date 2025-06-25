@@ -4,8 +4,8 @@ from django.template import RequestContext
 from django.shortcuts import render
 
 # importar las clases de models.py
-from administrativo.models import Matricula, Estudiante
-from administrativo.forms import MatriculaForm, MatriculaEditForm
+from administrativo.models import Matricula, Estudiante, Modulo
+from administrativo.forms import MatriculaForm, MatriculaEditForm, ModuloForm
 
 # vista que permita presesentar las matriculas
 # el nombre de la vista es index.
@@ -14,10 +14,15 @@ def index(request):
     """
     """
     matriculas = Matricula.objects.all()
+    estudiantes = Estudiante.objects.all()  # <--- Agrega esta línea
 
     titulo = "Listado de matriculas"
-    informacion_template = {'matriculas': matriculas,
-    'numero_matriculas': len(matriculas), 'mititulo': titulo}
+    informacion_template = {
+        'matriculas': matriculas,
+        'estudiantes': estudiantes,  # <--- Y esta línea
+        'numero_matriculas': len(matriculas),
+        'mititulo': titulo
+    }
     return render(request, 'index.html', informacion_template)
 
 

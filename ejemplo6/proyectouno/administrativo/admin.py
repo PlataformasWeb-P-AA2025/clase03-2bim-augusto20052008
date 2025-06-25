@@ -19,8 +19,6 @@ class EstudianteAdmin(admin.ModelAdmin):
 # el segundo argumento la clase EstudianteAdmin
 admin.site.register(Estudiante, EstudianteAdmin)
 
-admin.site.register(Modulo)
-
 # admin.site.register(Matricula)
 class MatriculaAdmin(admin.ModelAdmin):
     # listado de atributos que se mostrará
@@ -32,3 +30,8 @@ class MatriculaAdmin(admin.ModelAdmin):
 
 admin.site.register(Matricula, MatriculaAdmin)
 
+class ModuloAdmin(admin.ModelAdmin):
+    list_display = ('nombre', 'costo')
+    search_fields = ('nombre',)
+
+admin.site.register(Modulo, ModuloAdmin)

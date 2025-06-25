@@ -1,14 +1,17 @@
 from django.forms import ModelForm
 from django import forms
 
-from administrativo.models import Matricula
+from administrativo.models import Matricula, Modulo
+
+class ModuloForm(ModelForm):
+    class Meta:
+        model = Modulo
+        fields = ['nombre', 'costo']
 
 class MatriculaForm(ModelForm):
     class Meta:
         model = Matricula
         fields = ['estudiante', 'modulo', 'comentario']
-
-
 
 class MatriculaEditForm(ModelForm):
 

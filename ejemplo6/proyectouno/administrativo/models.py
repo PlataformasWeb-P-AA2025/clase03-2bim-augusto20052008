@@ -39,9 +39,8 @@ class Modulo(models.Model):
         ('5', 'Quinto'),
         ('6', 'Sexto'),
         )
-
-    nombre = models.CharField(max_length=30, \
-            choices=opciones_modulo)
+    nombre = models.CharField(max_length=30, choices=opciones_modulo)
+    costo = models.DecimalField(max_digits=7, decimal_places=2, default=0)  # Nuevo campo
     estudiantes = models.ManyToManyField(Estudiante, through='Matricula')
 
     def __str__(self):
