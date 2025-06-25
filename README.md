@@ -8,8 +8,10 @@ Cuando no se usa related_name django, pone por defecto el nombre del modelo con 
 
 ### 25 junio 2025
 En Crear Número Telefónico para un estudiante especifico, ya sabes para quién es el número, no tienes que elegir el estudiante. Por lo que el formulario solo habran 2 campos visibles Telefono, Tipo. Pero el campo del estudiante no sera vacio, solo se oculta 
-      <input type="hidden" name="estudiante" value="2" id="id_estudiante">
-ya que se tiene guardado el id del estudiante "Luisa Tene"
+
+      input type="hidden" name="estudiante" value="2" id="id_estudiante"
+
+Ya que se tiene guardado el id del estudiante "Luisa Tene"
 Esto significa que el número que agregues se asociará automáticamente a Luisa, sin que tú tengas que seleccionarla.
 
 Resumen:
