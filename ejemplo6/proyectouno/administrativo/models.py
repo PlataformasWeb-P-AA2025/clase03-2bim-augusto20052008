@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Sum
 
 # Create your models here.
 
@@ -23,9 +24,14 @@ class Estudiante(models.Model):
                 self.cedula,
                 self.edad,
                 self.tipo_estudiante)
-
+        
     def obtener_matriculas(self):
         return self.lasmatriculas.all()
+    def costo_total(self):
+        return self.lasmatriculas.aggregate(
+            total=Sum('modulo__costo')
+        )['total'] or 0
+
         
 
 class Modulo(models.Model):

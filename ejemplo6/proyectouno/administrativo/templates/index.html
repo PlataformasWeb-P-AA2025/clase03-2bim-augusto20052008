@@ -51,11 +51,15 @@
     <td>
       <ul>
         {% for m in estudiante.lasmatriculas.all %}
-          <li>{{ m.modulo.nombre }} ({{ m.modulo.costo }})</li>
+          <li>
+            Módulo: {{ m.modulo.nombre }}<br>
+            Costo: {{ m.modulo.costo }}
+          </li>
         {% empty %}
           <li>Sin matrículas</li>
         {% endfor %}
       </ul>
+      <b>Costo Total: {{ estudiante.costo_total }}</b>
     </td>
   </tr>
   {% endfor %}
